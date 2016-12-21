@@ -21,7 +21,7 @@ $SLEEP $SLEEPSECONDS
 # check the result
 nmatch=`cat $OUTPUTFILE | grep Kappa=kapppa | wc -l`
 
-if [ $nmatch -eq l ]; then
+if [ $nmatch -eq 1 ]; then
 	   print_ok
 else
 	   print_ko
