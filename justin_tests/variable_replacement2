@@ -1,17 +1,8 @@
 #!/bin/bash
 #
-# run a mix of ls and /bin/ls many times
+# Can you correctly expand $$?
 
-command="ls
-ls
-ls
-/bin/ls
-ls
-ls
-ls
-/bin/ls
-ls
-ls"
+command="echo $$"
 tmp_file="checker_tmp_file_$RANDOM"
 
 # clean up
@@ -27,8 +18,9 @@ echo "$command" | $SHELL > $OUTPUTFILE 2> /dev/null &
 $SLEEP $SLEEPSECONDS
 
 # check the result
-nmatch=`cat $OUTPUTFILE | grep -c "$tmp_file"`
-if [ $nmatch -eq 10 ]; then
+nmatch=`cat $OUTPUTFILE`
+
+if [ $nmatch -gt 30 ]; then
 	   print_ok
 else
 	   print_ko

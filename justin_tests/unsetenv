@@ -1,26 +1,29 @@
 #!/bin/bash
 #
-# test simple command /bin/ls
+# Can you unset env?
 
-command="printenv"
+command="setenv Kappa kapppa
+env
+unsetenv Kappa
+env"
 tmp_file="checker_tmp_file_$RANDOM"
 
 # clean up
 stop_shell
 rm -f $tmp_file
-cat $OUTPUTFILE
+
 # create a pseudo random file
 touch $tmp_file
-echo "$command" | /bin/sh > $tmp_file
-# run command
+# send commands
 echo "$command" | $SHELL > $OUTPUTFILE 2> /dev/null &
 
 # wait a little bit
 $SLEEP $SLEEPSECONDS
 
 # check the result
-cmp -s "$OUTPUTFILE" "$tmp_file"
-if [ `echo $?` -eq 0 ]; then
+nmatch=`cat $OUTPUTFILE | grep Kappa=kapppa | wc -l`
+
+if [ $nmatch -eq l ]; then
 	   print_ok
 else
 	   print_ko
