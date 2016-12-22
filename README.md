@@ -1,9 +1,6 @@
 # Simple Shell, Checks
 
-There will be no checks released before the deadline. We **strongly** encourage the whole class to work together and create a suite of checks covering both regular tests and edged cases for each task.
-
-Here is an example on how to check your shell.
-Fork this repo and add more checks to help you and the rest of the class build the best simple shell possible.
+This repository is a companion to the simple_shell. It contains all kind of checks we thought could be useful to test our simple shell programs. It is a fork from an [example](https://github.com/holbertonschool/0x15.c) we were given on how to check our shell. We added on it keeping the same format.
 
 ## Configuration
 
