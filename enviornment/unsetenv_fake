@@ -20,7 +20,7 @@ $SLEEP $SLEEPSECONDS
 
 # check the result
 nmatch=`cat $OUTPUTFILE | grep -c IDONOTEXIST`
-if [ $nmatch -eq 0 ] && [ ! -s $ERROROUTPUTFILE]; then
+if [ $nmatch -eq 0 ] && [ ! -s $ERROROUTPUTFILE ]; then
 	   print_ok
 else
 	   print_ko
