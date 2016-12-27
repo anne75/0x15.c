@@ -14,6 +14,11 @@
 function print_ko()
 {
     echo -e "[\033[31mKO\033[37m]"
+    echo "###############################################################"
+    echo The following command was run and did not output as expected:
+    echo -e "$command"
+    echo -e "From testing source \033[1m$dir$testname\033[0m"
+    echo "###############################################################"
 }
 
 #######################################
